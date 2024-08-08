@@ -19,7 +19,7 @@ Identify Trends and Spending Patterns: Discover trends in customer spending and 
 
 Answer Critical Business Questions: Address key business queries to support strategic decisions, such as selecting locations for promotional events and understanding high-value customers.
 
-Technologies Used :
+Technologies Used : 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 PostgreSQL: A powerful, open-source relational database system used to store and query the dataset.
