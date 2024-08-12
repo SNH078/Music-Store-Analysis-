@@ -7,17 +7,10 @@ This project involves a comprehensive analysis of an Online Music Store dataset 
 
 Objectives
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-Gain Valuable Insights into Store Operations: Analyze the dataset to understand the overall performance and efficiency of the music store.
-
-Understand Customer Segmentation and Interests: Segment customers based on their purchasing behavior and identify their preferences.
-
-Evaluate Artist Performance and Growth: Assess the effectiveness and growth of artists by analyzing their sales data and track counts.
-
-Identify Trends and Spending Patterns: Discover trends in customer spending and the most popular genres and tracks.
-
-Answer Critical Business Questions: Address key business queries to support strategic decisions, such as selecting locations for promotional events and understanding high-value customers.
+Gain Valuable Insights into Store Operation
+Evaluate Artist Performance and Growth
+Identify Trends and Spending Patterns
+Answer Critical Business Questions
 
 Technologies Used : 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
