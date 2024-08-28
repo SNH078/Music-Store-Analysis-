@@ -53,7 +53,7 @@ LIMIT 1;
 SELECT DISTINCT email,first_name, last_name
 FROM customer
 JOIN invoice ON customer.customer_id = invoice.customer_id
-JOIN invoiceline ON invoice.invoice_id = invoiceline.invoice_id
+JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id
 WHERE track_id IN(
 	SELECT track_id FROM track
 	JOIN genre ON track.genre_id = genre.genre_id
@@ -61,7 +61,15 @@ WHERE track_id IN(
 )
 ORDER BY email;
 
-
+-- OR 
+SELECT DISTINCT email, first_name, last_name
+FROM customer
+JOIN invoice ON customer.customer_id = invoice.customer_id
+JOIN invoice_line ON invoice.invoice_id = invoice_line.invoice_id
+JOIN track ON invoice_line.track_id = track.track_id
+JOIN genre ON track.genre_id = genre.genre_id
+WHERE genre.name LIKE 'Rock'
+ORDER BY email;
  -- Q7: Let's invite the artists who have written the most rock music in our dataset. 
 -- Write a query that returns the Artist name and total track count of the top 10 rock bands.  
 
@@ -79,12 +87,13 @@ LIMIT 10;
  -- Q8: Return all the track names that have a song length longer than the average song length. 
 -- Return the Name and Milliseconds for each track. Order by the song length with the longest songs listed first.  
 
-SELECT name,miliseconds
+
+SELECT name,milliseconds
 FROM track
-WHERE miliseconds > (
-	SELECT AVG(miliseconds) AS avg_track_length
+WHERE milliseconds > (
+	SELECT AVG(milliseconds) AS avg_track_length
 	FROM track )
-ORDER BY miliseconds DESC;
+ORDER BY milliseconds DESC;
 
  -- Q9: Find how much amount spent by each customer on best selling artist? Write a query to return customer name, artist name and total spent  
 
@@ -140,4 +149,4 @@ WITH Customer_with_country AS (
 		JOIN customer ON customer.customer_id = invoice.customer_id
 		GROUP BY 1,2,3,4
 		ORDER BY 4 ASC,5 DESC)
-SELECT * FROM Customer_with_country WHERE RowNo <= 1
+SELECT * FROM Customer_with_country WHERE RowNo <= 1 
